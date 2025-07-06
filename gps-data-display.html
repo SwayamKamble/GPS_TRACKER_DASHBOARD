@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPS Live Data Display</title>
+    <link rel="icon" type="image/png" href="fav_icon.png">
+    <link rel="stylesheet" href="gps-styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" 
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" 
+          crossorigin=""/>
+</head>
+<body>
+    <div class="container">
+        <div class="header-section">
+            <h1>GPS Live Data Monitor</h1>
+            <div class="header-controls">
+                <button id="theme-toggle" class="theme-toggle" title="Toggle Theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button id="dashboard-btn" class="dashboard-button">← Back to Dashboard</button>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="data-points">Number of data points:</label>
+                <select id="data-points" class="data-points-select">
+                    <option value="1">1</option>
+                    <option value="2" selected>2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                </select>
+            </div>
+            <button id="refresh-btn" class="refresh-button">Refresh Data</button>
+            <div id="loading" class="loading">Loading...</div>
+        </div>
+        
+        <div class="channel-info">
+            <h2>Channel Information</h2>
+            <div id="channelData"></div>
+        </div>
+        
+        <div class="map-section">
+            <h2>GPS Locations Map</h2>
+            <div id="gps-map"></div>
+        </div>
+        
+        <div class="feeds-section">
+            <h2>GPS Feeds</h2>
+            <div id="feedsData"></div>
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" 
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" 
+            crossorigin=""></script>
+    <script src="gps-parser.js"></script>
+</body>
+</html>

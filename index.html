@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPS Tracker Dashboard</title>
+    <link rel="icon" type="image/png" href="fav_icon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" 
+          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" 
+          crossorigin=""/>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>GPS Tracker Dashboard</h1>
+            <div class="header-controls">
+                <button id="theme-toggle" class="theme-toggle" title="Toggle Theme">
+                    <span class="theme-icon">🌙</span>
+                </button>
+                <button id="data-display-btn" class="data-display-button">View Raw Data</button>
+            </div>
+        </header>
+        
+        <main>
+            <section class="map-container">
+                <div id="map"></div>
+            </section>
+            
+            <section class="stats-container">
+                <div class="stats-card">
+                    <h2>Scan Statistics</h2>
+                    <div class="stats-data">
+                        <div class="stat-item">
+                            <h3>Missed Scans</h3>
+                            <p id="missed-scans" class="stat-value">-</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>Successful Scans</h3>
+                            <p id="successful-scans" class="stat-value">-</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>Scan Errors</h3>
+                            <p id="scan-errors" class="stat-value">-</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats-card">
+                    <h2>GPS Status</h2>
+                    <div class="stats-data">
+                        <div class="stat-item">
+                            <h3>Satellites in Use</h3>
+                            <p id="satellites" class="stat-value">-</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>Battery Level</h3>
+                            <p id="battery" class="stat-value">-</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats-card">
+                    <h2>Latest Coordinates</h2>
+                    <div class="coordinates">
+                        <div class="coord-item">
+                            <h3>Latitude</h3>
+                            <p id="latitude" class="coord-value">-</p>
+                        </div>
+                        <div class="coord-item">
+                            <h3>Longitude</h3>
+                            <p id="longitude" class="coord-value">-</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="stats-card">
+                    <h2>Device Time</h2>
+                    <p id="device-time" class="update-time">-</p>
+                </div>
+                
+                <div class="stats-card">
+                    <h2>Last Update</h2>
+                    <p id="last-update" class="update-time">-</p>
+                    <button id="refresh-btn" class="refresh-button">Refresh Data</button>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>Data sourced from ThingSpeak API | Last fetched: <span id="fetch-time">-</span></p>
+        </footer>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" 
+            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" 
+            crossorigin=""></script>
+    <script src="script.js"></script>
+</body>
+</html>
